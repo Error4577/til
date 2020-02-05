@@ -48,27 +48,27 @@ Hint: Some lines were ellipsized, use -l to show in full.
 ### ファイアウォールの設定
 ファイアウォール・・・サーバーに対する不正なアクセスを防ぐ仕組み  
 
-httpの通信に使うポート80を開ける
+#### httpの通信に使うポート80を開ける
 ```
 $ sudo firewall-cmd --permanent --zone=public --add-service=http
 success
 ```
 
-httpsの通信に使うポート443を開ける
+#### httpsの通信に使うポート443を開ける
 ```
 $ sudo firewall-cmd --permanent --zone=public --add-service=https
 success
 ```
 
-firewallをリロードして設定を反映させる
+#### firewallをリロードして設定を反映させる
 ```
 $ sudo firewall-cmd --reload
 success
 ```
 
-SELinux関連の設定を行う  
+#### SELinux関連の設定を行う  
 
-SELinuxについて少し調べてみた
+##### SELinuxについて少し調べてみた
 - 通常のパーミッションより細かくポリシーを定義できる(rootユーザーの権限を弱めることもできる)
 - セキュリティが高いが故に余計な挙動が起こって、むしろ管理しにくいというケースがある。
 - 無効化していてもサーバーとして問題無く動作する
